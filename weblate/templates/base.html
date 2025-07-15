@@ -420,6 +420,14 @@
           </div>
         </div>
       </nav>
+
+      {% if menu_items %}
+        {% include 'snippets/menu.html' %}
+      {% endif %}
+
+      {% block nav_pills %}
+      {% endblock nav_pills %}
+
       {% block breadcrumbs_container %}
         <h1>
           <ol class="breadcrumb">
@@ -454,13 +462,6 @@
           {% show_message message.tags message %}
         {% endfor %}
       {% endif %}
-
-      {% if menu_items %}
-        {% include 'snippets/menu.html' %}
-      {% endif %}
-
-      {% block nav_pills %}
-      {% endblock nav_pills %}
 
       {% block content %}{% endblock %}
 
